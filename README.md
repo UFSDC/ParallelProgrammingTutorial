@@ -1,4 +1,4 @@
 Parallel Programming Tutorial
 ========
 
-A tutorial given on parallel programming to the University of Florida Software Development Club.
+A tutorial on parallel programming for the University of Florida Software Development Club.
