@@ -11,16 +11,27 @@ Who has
 * done any concurrent/parallel programming?
 * used locking, race conditions, atomic operations, deadlocks, etc.?
 
+## The ideas are universal
+Everything I'm presenting in the beginning of this talk is relevant to any kind of concurrent programming. Nothing is Java specific (execept for the Java code we write later).
+
+## Support for Threading
+* All modern OSes have native support for threads, which is what programming languages tap into to create threads
+* *Most* modern programming languages give your the facilites to do some kind of parallel programming.
+* Note that **not all** languages have threading support
+	* For example, Python actually does not have threads!
+	* The reason why is very Python specific and not relevant to this talk, but briefly has to do with the fact that it is interpreted instead of compiled
+	* It does have a module call `multiprocessing` which spawns multiple Python *processes*, which can then execute in parallel, giving you a similar effect
+
 ## Terminology
 
 **process** == an instance of a program in execution
 **thread** == an independent flow of control *within* a program
-**sequential** programs == programs which do *not* have any concurrency/parallelism (have only one thread). These are the kinds of programs you're most likely used to writing.
 **concurrent** programming == writing code that has the *potential* to execute in *parallel* if executed on the appropriate hardware (a machine with multiple CPUs/cores)
 **parallel** programming == concurrent when the program actually runs in parallel
 **multi-threaded** programs == any programs that use multiple threads (duh)
+**sequential** programs == programs which do *not* have any concurrency/parallelism (have only one thread). These are the kinds of programs you're most likely used to writing.
 
-In other words, *concurrent* and *parallel* programs are the same when you run on hardware that allows parallel execution. These programs are written identically. For all intents and purposes, think of these terms as referring to the same thing.
+Just to point out, the terms *concurrent* and *parallel* programs are the same when you run on hardware that allows parallel execution. These programs are written identically. For all intents and purposes, think of these terms as referring to the same thing.
 
 ## Things happen in parallel
 Most modern CPU architectures have more than 1 core. These cores can execute instructions at the same time.
