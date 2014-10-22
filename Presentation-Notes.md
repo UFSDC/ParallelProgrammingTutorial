@@ -12,16 +12,24 @@ Who has
 * used locking, race conditions, atomic operations, deadlocks, etc.?
 
 ## Terminology
-* Difference between concurrent and parallel programming
 
+**process** == an instance of a program in execution
+**thread** == an independent flow of control *within* a program
+**sequential** programs == programs which do *not* have any concurrency/parallelism (have only one thread). These are the kinds of programs you're most likely used to writing.
 **concurrent** programming == writing code that has the *potential* to execute in *parallel* if executed on the appropriate hardware (a machine with multiple CPUs/cores)
 **parallel** programming == concurrent when the program actually runs in parallel
 **multi-threaded** programs == any programs that use multiple threads (duh)
 
-In other words, these are the same when you run on hardware that allows parallel execution. For all intents and purposes, think of these terms as referring to the same thing.
+In other words, *concurrent* and *parallel* programs are the same when you run on hardware that allows parallel execution. These programs are written identically. For all intents and purposes, think of these terms as referring to the same thing.
 
 ## Things happen in parallel
 Most modern CPU architectures have more than 1 core. These cores can execute instructions at the same time.
+
+Have you ever had a program freeze up on you, and you decide to kill the process manually? What did you notice when you were trying to find the halted process? You may have noticed that there are a *lot* of processes running. How does your computer allow for this many processes running simultaneously? Well obviously, they can't all run at once unless you have like hundreds of cores.
+
+The way computers allow more than one process to run at once is very similar to the technique humans use to do more than one thing at once (multi-task). Our brain actually switches focus from one task to another, but does it fast enough that it appears we are doing them at the same time. Operating systems do a similar thing with processes. They switch between them, giving each a change to execute for some period of time before pausing that process and switching to another. The decisions of what processes to allow to run when and for how long to let them run is called **process scheduling**, and it's an entire research area itself.
+
+Scheduling is also used by your OS to allow more than one thread execute at once. The details of how scheduling works is not important for this tutorial. Just be aware of the high level understanding of switching between threads.
 
 ## Different Kinds of Parallel Programmming 
 There are different ways that we can use parallel programming to help us. Each of these styles is solving a different problem.
