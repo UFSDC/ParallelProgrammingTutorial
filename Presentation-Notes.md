@@ -25,10 +25,15 @@ Everything I'm presenting in the beginning of this talk is relevant to any kind 
 ## Terminology
 
 **process** == an instance of a program in execution
+
 **thread** == an independent flow of control *within* a program
+
 **concurrent** programming == writing code that has the *potential* to execute in *parallel* if executed on the appropriate hardware (a machine with multiple CPUs/cores)
+
 **parallel** programming == concurrent when the program actually runs in parallel
+
 **multi-threaded** programs == any programs that use multiple threads (duh)
+
 **sequential** programs == programs which do *not* have any concurrency/parallelism (have only one thread). These are the kinds of programs you're most likely used to writing.
 
 Just to point out, the terms *concurrent* and *parallel* programs are the same when you run on hardware that allows parallel execution. These programs are written identically. For all intents and purposes, think of these terms as referring to the same thing.
